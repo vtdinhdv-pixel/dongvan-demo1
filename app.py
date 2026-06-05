@@ -1,20 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 
-# 1. Cấu hình Gemini AI
-genai.configure(api_key="DÁN_API_KEY_CỦA_BẠN_VÀO_ĐÂY")
+# Cấu hình Gemini
+# Lưu ý: Nếu bạn dùng Secrets, hãy giữ lại phần genai.configure... cũ của bạn
+genai.configure(api_key=st.secrets["API_KEY"])
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# 2. Giao diện Web
+# Giao diện
 st.title("Chào mừng đến với Phố cổ Đồng Văn")
 st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pho_co_Dong_Van.jpg/800px-Pho_co_Dong_Van.jpg", caption="Phố cổ Đồng Văn - Trái tim đá")
-st.write("Nhấn để nghe câu chuyện của chúng mình:")
-st.audio("chuyen_pho_co.mp3")
 
-# 3. Chat với AI
-st.subheader("Hỏi người bạn Cao nguyên")
-user_input = st.text_input("Bạn muốn hỏi gì về Phố cổ?")
-if user_input:
-    prompt = f"Bạn là hướng dẫn viên du lịch tại Phố cổ Đồng Văn. Hãy trả lời câu hỏi này: {user_input}"
-    response = model.generate_content(prompt)
-    st.write(response.text)
+st.write("Hãy cùng trò chuyện về lịch sử nơi đây!")
