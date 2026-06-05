@@ -7,7 +7,7 @@ model = genai.GenerativeModel('gemini-1.5-flash')
 
 # 2. Giao diện Web
 st.title("Chào mừng đến với Phố cổ Đồng Văn")
-st.image("pho_co_dong_van.jpg", caption="Phố cổ Đồng Văn - Trái tim đá")
+st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pho_co_Dong_Van.jpg/800px-Pho_co_Dong_Van.jpg", caption="Phố cổ Đồng Văn - Trái tim đá"), caption="Phố cổ Đồng Văn - Trái tim đá")
 
 st.write("Nhấn để nghe câu chuyện của chúng mình:")
 st.audio("chuyen_pho_co.mp3")
